@@ -13,7 +13,7 @@ bool gasalarm  = false;
 bool paused      = false;
 
 void alarmstate();
-void printdata();
+void printStatus();
 void pause();
 
 int main()
@@ -61,12 +61,12 @@ void alarmstate()
     if (!tempalarm && !gasalarm) {
         buzzer.input();
         if (!paused) {
-            printdata();
+            printStatus();
         }
     }
 }
 
-void printdata()
+void printStatus()
 {
     char str[200];
     sprintf(str, "Temp: %.2f C\nGas: %.2f\nPot: %.2f\nSystem Normal\r\n",
